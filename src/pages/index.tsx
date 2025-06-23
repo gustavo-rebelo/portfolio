@@ -345,7 +345,7 @@ export default function Home() {
               <div className="flex flex-col h-full rounded-lg bg-white/5 p-6 shadow-md backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:shadow-md">
                 <div className="grid grid-cols-1 gap-4 mb-4">
                   <Image
-                    src="/assets/ScreenshotWeb1.PNG"
+                    src="/assets/TelaInicial.png"
                     alt="Screenshot 1"
                     width={300}
                     height={200}
