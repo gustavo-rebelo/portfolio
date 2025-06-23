@@ -15,16 +15,19 @@ import {
 } from "@/components/ui/carousel";
 import VanillaTilt from "vanilla-tilt";
 import { motion } from "framer-motion";
+import Image from 'next/image';
+import { redirect } from "next/dist/server/api-utils";
+
 
 
 
 const aboutStats = [
   { label: "Anos de experiência", value: "1+" },
-  { label: "Tecnlogias utilizadas", value: "5+" },
-  { label: "Projetos desenvolvidos", value: "15+" },
+  { label: "Tecnologias utilizadas", value: "5+" },
+  { label: "Projetos desenvolvidos", value: "10+" },
 ];
 
-const services = [
+const skills = [
   {
     service: "Desenvolvimento Full Stack",
     description:
@@ -139,7 +142,7 @@ export default function Home() {
             <div
               data-scroll
               data-scroll-direction="horizontal"
-              data-scroll-speed=".2"
+              data-scroll-speed=".1"
               className="flex flex-row items-center space-x-1.5"
             >
               <span className={styles.pill}>TypeScript</span>
@@ -174,7 +177,7 @@ export default function Home() {
             <span
               data-scroll
               data-scroll-enable-touch-speed
-              data-scroll-speed=".01"
+              data-scroll-speed="0.1"
               className="flex flex-row items-center space-x-1.5 pt-6"
             >
               <Link href="/assets/curriculo.pdf" passHref>
@@ -201,15 +204,19 @@ export default function Home() {
             </div>
           </div>
           <div
-            data-scroll
-            data-scroll-speed="0.6"
-            id={styles["canvas-container"]}
-            className="mt-14 h-full w-full xl:mt-0"
-          >
-            <Suspense fallback={<span>Loading...</span>}>
-              <img src="/assets/cover.jpeg" alt="" />
-            </Suspense>
-          </div>
+  data-scroll
+  data-scroll-speed="0.1"
+  className="mt-14 h-full xl:mt-0 flex justify-center xl:mr-20 xl:w-1/2 xl:max-w-md xl:items-center xl:justify-end "
+>
+  <Image
+    src="/assets/cover.jpeg"
+    alt="Gustavo Rebelo"
+    width={500}
+    height={800}
+    className="rounded-lg transition-transform duration-1000 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 hover:backdrop-blur-sm"
+  />
+</div>
+
         </section>
 
         {/* About */}
@@ -240,23 +247,23 @@ export default function Home() {
             </div>
             <h2 className="clash-grotesk text-gradient text-align font-fine text-2xl font-fine tracking-tight xl:text-2xl">Confira meus projetos:</h2>
             <div className={styles.intro}>
-            <div
-              data-scroll
-              data-scroll-direction="horizontal"
-              data-scroll-speed="-0.001"
-              className="flex flex-row items-center space-x-1.5"
-            >
-              <button className={styles.github}>
-                <a href="http://github.com/gustavo-rebelo" target="_blank" rel="noopener noreferrer">GitHub</a>
-              </button>
-            </div>
+              <div
+                data-scroll
+                data-scroll-direction="horizontal"
+                data-scroll-speed="-0.001"
+                className="flex flex-row items-center space-x-1.5"
+              >
+                <button className={styles.github}>
+                  <a href="http://github.com/gustavo-rebelo" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </button>
+              </div>
             </div>
           </div>
         </section>
 
 
         {/* Skills */}
-        <section id="services" data-scroll-section>
+        <section id="skills" data-scroll-section>
           <div
             data-scroll
             data-scroll-speed="0.1"
@@ -285,7 +292,7 @@ export default function Home() {
                   Aqui estão algumas das habilidades que coloco em prática:
                 </p>
               </div>
-              {services.map((service) => (
+              {skills.map((service) => (
                 <div
                   key={service.service}
                   className="flex flex-col items-start rounded-md bg-white/5 p-14 shadow-md backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:shadow-md"
@@ -303,6 +310,105 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Projects */}
+        <section id="projects" data-scroll-section>
+          <div
+            data-scroll
+            data-scroll-speed="0.1"
+            data-scroll-position="top"
+            className="my-24 flex max-w-6xl flex-col justify-start space-y-10"
+          >
+            <h2 className="py-16  pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[40px]">
+              Confira alguns dos meus projetos mais recentes:
+            </h2>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+              {/* Example project cards */}
+              <div className="rounded-lg bg-white/5 p-6 shadow-md backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:shadow-md">
+                <div className="grid grid-cols-3 gap-4 mb-4">
+                  <Image
+                    src="/assets/Screenshot1.PNG"
+                    alt="Screenshot 1"
+                    width={300}
+                    height={200}
+                    className="rounded-md"
+                  />
+                  <Image
+                    src="/assets/Screenshot2.PNG"
+                    alt="Screenshot 2"
+                    width={300}
+                    height={200}
+                    className="rounded-md"
+                  />
+                  <Image
+                    src="/assets/Screenshot3.PNG"
+                    alt="Screenshot 3"
+                    width={300}
+                    height={200}
+                    className="rounded-md"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold">Savya</h3>
+                <p className="mt-2 text-muted-foreground">
+                  Aplicativo focado em bem-estar feminino, com rotina personalizada, agenda interativa e estatísticas motivacionais. Desenvolvido com React Native (Expo) e Firebase.
+                </p>
+                <Link href="https://github.com/gustavo-rebelo/Savya" passHref target="_blank">
+                  <Button className="mt-4">Ver no GitHub</Button>
+                </Link>
+              </div>
+              <div className="flex flex-col h-full rounded-lg bg-white/5 p-6 shadow-md backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:shadow-md">
+                <div className="grid grid-cols-1 gap-4 mb-4">
+                  <Image
+                    src="/assets/ScreenshotWeb1.PNG"
+                    alt="Screenshot 1"
+                    width={300}
+                    height={200}
+                    className="rounded-md"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold">Saúde em Foco</h3>
+                <p className="mt-2 text-muted-foreground">
+                  Site desenvolvido para auxiliar as pessoas a acompanharem como está seu Índice de Massa Corporal (IMC), sua Taxa Metabólica Basal (TMB) e a sua saúde em geral.
+                </p>
+                
+                <div className="mt-auto pt-4">
+                  <Link href="https://github.com/gustavo-rebelo/saude-em-foco" passHref target="_blank">
+                    <Button>Ver no GitHub</Button>
+                  </Link>
+                </div>
+              </div>
+              {/* Add more project cards as needed */}
+            </div>
+          </div>
+          <h2 className="clash-grotesk text-gradient text-align font-fine text-2xl font-fine tracking-tight xl:text-4xl mb-8">
+              Confira todos os meus projetos:
+            </h2>
+
+            <div className={styles.intro}>
+              <div
+                data-scroll
+                data-scroll-direction="horizontal"
+                data-scroll-speed="-0.001"
+                className="flex flex-col items-center space-y-4"
+              >
+                <a
+                  href="https://github.com/gustavo-rebelo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src="/assets/github.png"
+                    alt="GitHub Logo"
+                    width={0}
+                    height={0}
+                    className="w-full h-auto rounded-lg transition-transform duration-1000 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 hover:backdrop-blur-sm"
+                    sizes="100vw"
+                  />
+                </a>
+
+              </div>
+            </div>
+          </section>
+
         {/* Contact */}
         <section id="contact" data-scroll-section className="my-64">
           <div
@@ -313,8 +419,7 @@ export default function Home() {
           >
             <h2 className="text-4xl font-medium tracking-tighter xl:text-6xl">
               Entre em{" "} 
-              <span className="text-gradient clash-grotesk">contato</span>
-              !
+              <span className="text-gradient clash-grotesk">contato!</span>
             </h2>
             <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
               Clique abaixo e entre em contato comigo, vamos conversar!
