@@ -245,19 +245,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <h2 className="clash-grotesk text-gradient text-align font-fine text-2xl font-fine tracking-tight xl:text-2xl">Confira meus projetos:</h2>
-            <div className={styles.intro}>
-              <div
-                data-scroll
-                data-scroll-direction="horizontal"
-                data-scroll-speed="-0.001"
-                className="flex flex-row items-center space-x-1.5"
-              >
-                <button className={styles.github}>
-                  <a href="http://github.com/gustavo-rebelo" target="_blank" rel="noopener noreferrer">GitHub</a>
-                </button>
-              </div>
-            </div>
           </div>
         </section>
 
