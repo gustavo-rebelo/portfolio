@@ -169,7 +169,7 @@ export default function Container(props: ContainerProps) {
             >
               {/* Expandable menu */}
               <div className="flex h-20 max-h-20 min-h-[60px] w-full items-center justify-between border-b pl-[22px] pr-1">
-                <span className="text-base font-medium lowercase">Menu</span>
+                <span className="text-base font-medium capitalize">Menu</span>
                 <button
                   onClick={() => setIsOpen(!isOpen)}
                   className={styles.burger}
@@ -198,7 +198,7 @@ export default function Container(props: ContainerProps) {
                 {/* Footer */}
                 <div className="flex min-h-fit w-full flex-col space-y-8 px-[22px] py-10">
                   <span className="text-sm text-muted-foreground">
-                    © {new Date().getFullYear()} gustavo. All rights reserved.
+                    © {new Date().getFullYear()} Gustavo Rebelo. All rights reserved.
                   </span>
                 </div>
               </div>
