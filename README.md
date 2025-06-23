@@ -92,7 +92,26 @@ EMAIL_SERVICE_KEY=xxxxxx
 
 ## Estrutura do Projeto
 
-### EM BREVE!
+📦 portfolio/
+├── 📁 public/
+├── 📁 src/
+│   ├── 📁 components/
+│   ├── 📁 pages/
+│   └── 📄 App.tsx
+├── 📄 .env.example
+├── 📄 .eslintrc.cjs
+├── 📄 .gitignore
+├── 📄 LICENSE.md
+├── 📄 README.md
+├── 📄 components.json
+├── 📄 next.config.js
+├── 📄 package-lock.json
+├── 📄 package.json
+├── 📄 pnpm-lock.yaml
+├── 📄 postcss.config.cjs
+├── 📄 prettier.config.js
+├── 📄 tailwind.config.ts
+└── 📄 tsconfig.json
 
 ---
 
