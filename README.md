@@ -145,4 +145,3 @@ EMAIL_SERVICE_KEY=xxxxxx
 # Desenvolvido por Gustavo Rebelo
 * [LinkedIn](https://www.linkedin.com/in/gustavo-mendes-rebelo/)
 * [Email](mailto:gustavo.rebelo155@gmail.com)
-

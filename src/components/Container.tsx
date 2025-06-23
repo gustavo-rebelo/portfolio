@@ -39,7 +39,8 @@ const variants = {
 const navLinks = [
   { href: "#home", text: "Home" },
   { href: "#about", text: "Sobre" },
-  { href: "#services", text: "Skills" },
+  { href: "#skills", text: "Skills" },
+  { href: "#projects", text: "Projetos" },
   { href: "#contact", text: "Contato" },
 ];
 
@@ -82,8 +83,8 @@ export default function Container(props: ContainerProps) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: "Gustavo - Full-stack developer",
-    description: `Full-stack website developer and TypeScript enthusiast.`,
+    title: "Gustavo Rebelo | Desenvolvedor Full-Stack",
+    description: `Olá, eu sou o Gustavo Rebelo, um desenvolvedor full-stack apaixonado por criar soluções inovadoras e eficientes. Com experiência em diversas tecnologias, estou sempre em busca de novos desafios e oportunidades para aprimorar minhas habilidades.`,
     image: "/assets/logo.png",
     type: "website",
     ...customMeta,
