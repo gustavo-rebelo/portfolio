@@ -1,55 +1,127 @@
-# 🖥️ Personal Portfolio
+# 🌐 Gustavo Rebelo — Developer Portfolio
 
-A sleek, modern, and responsive portfolio bootstrapped with [create-t3-app](https://create.t3.gg/).
+**Developer Portfolio** é um projeto pessoal que apresenta meus principais trabalhos, habilidades técnicas, experiências e trajetória profissional no universo do desenvolvimento de software.
 
-[Website Preview](https://github.com/wendoj/portfolio/assets/77996774/b73b02d7-0657-41e3-9124-e6d04b17fe93)
+---
 
-[🔗 Link to portfolio](https://www.wendoj.codes)
+## Índice
 
-All you need to know about me, my projects and skills can be found here. Personalize the portfolio by modifying `src/pages/index.tsx` and `src/styles/globals.css` to emulate your own portfolio. Made some improvements and want to share? Open a pull request.
-For any issues, feel free to report them here.
+- [Sobre](#sobre)
+- [Funcionalidades Principais](#funcionalidades-principais)
+- [Tecnologias](#tecnologias)
+- [Arquitetura](#arquitetura)
+- [Configuração do Ambiente](#configuração-do-ambiente)
+- [Instalação](#instalação)
+- [Uso](#uso)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Segurança](#segurança)
+- [Screenshots](#screenshots)
+- [Contribuição](#contribuição)
 
-## 🎉 Features
-- **Responsive Design**: The portfolio is designed to be fully responsive, providing an optimal viewing experience across a wide range of devices from desktops to mobile phones.
-- **Easy Customization**: The portfolio structure is straightforward and well organized, making it easy to customize and showcase your unique set of skills and projects.
-- **Stunning UI/UX Design**: The portfolio boasts a sleek and modern design, using smooth animations to capture the attention of potential employers or clients.
-- **Interactive UI**: Utilizing modern web development techniques, the portfolio offers an interactive user interface that enhances user experience, such as `locomotive-scroll` and `framer-motion`.
+---
 
-## 🚀 Getting Started
+## Sobre
 
-### Prerequisites
-To get started with this portfolio, ensure that you have the following installed on your system:
-- Node.js
-- npm
-- git
+Este portfólio foi desenvolvido com o objetivo de concentrar minha atuação como desenvolvedor, destacando projetos reais, tecnologias utilizadas, e diferenciais que agrego às soluções que construo. Além disso, funciona como um repositório central para me apresentar profissionalmente de forma visual, moderna e interativa.
 
-## 🛠️ Installation
-Follow the steps below to clone and run this project on your local system:
+---
 
-```bash
-# Clone the repository
-$ git clone https://github.com/wendoj/developer-portfolio.git
+## Funcionalidades Principais
 
-# Navigate to the project directory
-$ cd developer-portfolio
+- **Página Inicial Dinâmica:** Apresentação animada com scroll suave e transições modernas.
+- **Seção de Projetos:** Cards interativos com informações técnicas, tecnologias e links de demonstração.
+- **Skills Técnicas:** Painel visual com ícones de stacks, ferramentas e plataformas que domino.
+- **Contato e Redes:** Formulário funcional e botões integrados às principais redes profissionais.
+- **Design Responsivo:** Totalmente adaptado para desktop, tablet e dispositivos móveis.
+- **Acessibilidade e Performance:** Boas práticas de UI/UX, Lighthouse e Core Web Vitals aplicadas.
 
-# Remove current origin repository
-$ git remote remove origin
+---
+
+## Tecnologias
+
+- **Frontend:** Next.js + React + TypeScript
+- **Estilização:** Tailwind CSS
+- **Animações:** Framer Motion, Locomotive Scroll
+- **Backend opcional:** (API REST/Node.js — se conectado a outros sistemas)
+- **Deploy:** Vercel
+
+---
+
+## Arquitetura
+
+- **Modularização por Seção:** Componentes organizados por contexto funcional (Home, Projetos, Skills, Contato).
+- **Boas Práticas de Acessibilidade:** Uso de landmarks, contraste adequado e navegação por teclado.
+- **Animações desacopladas:** Separação lógica entre UI e interações.
+- **Performance otimizada:** SSR do Next.js com lazy loading de imagens e códigos divididos em bundles.
+- **Escalável:** Estrutura de código pronta para integração com CMS, backend próprio ou APIs externas.
+
+---
+
+## Configuração do Ambiente
+
+Crie um arquivo `.env.local` na raiz com as configurações do ambiente, caso o projeto evolua para consumir APIs externas:
+
+```env
+NEXT_PUBLIC_API_BASE_URL=https://api.seuservidor.com
+EMAIL_SERVICE_KEY=xxxxxx
 ```
 
-<br />
+--- 
 
-Then install the required dependencies:
-```bash
-# Install dependencies
-$ npm install
+## Instalação
 
-# Start the development server:
-$ npm run dev
-```
-Now, open your browser and navigate to `http://localhost:3000` to view your portfolio live.
+## Clone o repositório
+* git clone https://github.com/gustavomrebelo/developer-portfolio.git
+* Acesse o diretório
+* cd developer-portfolio
+## Instale as dependências
+* npm install
+### ou
+* pnpm install
 
+---
 
-## How do I deploy this?
+## Uso
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+# Inicie o servidor de desenvolvimento
+* npm run dev
+### ou
+* pnpm dev
+
+---
+
+## Estrutura do Projeto
+
+### EM BREVE!
+
+---
+
+## Segurança
+
+* Variáveis sensíveis e chaves de API são armazenadas em arquivos .env.local.
+* O projeto está preparado para autenticação e integração segura com serviços externos.
+* Não são expostas credenciais sensíveis no repositório.
+
+---
+
+## Screenshots
+
+### EM BREVE!
+
+---
+
+## Contribuição
+
+### Contribuições são bem-vindas!
+
+1. Faça um fork do repositório
+2. Crie uma branch para sua feature (git checkout -b feature/nova-feature)
+3. Commit suas alterações (git commit -m 'feat: adiciona nova feature')
+4. Envie para o seu repositório (git push origin feature/nova-feature)
+5. Abra um Pull Request
+
+---
+
+# Desenvolvido por Gustavo Rebelo
+🔗 LinkedIn
+✉️ Email
