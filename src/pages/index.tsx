@@ -6,6 +6,7 @@ import {
   Code2,
   DatabaseIcon,
   KeyIcon,
+  PenToolIcon
 } from "lucide-react";
 import { MobileIcon, TriangleDownIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
@@ -16,9 +17,6 @@ import {
 import VanillaTilt from "vanilla-tilt";
 import { motion } from "framer-motion";
 import Image from 'next/image';
-import { redirect } from "next/dist/server/api-utils";
-
-
 
 
 const aboutStats = [
@@ -43,14 +41,20 @@ const skills = [
   {
     service: "Integrações e APIs",
     description:
-      "Conectando plataformas, automatizando processos e otimizando fluxos de trabalho.",
+      "Criação e manutenção de APIs, integrando plataformas e sistemas para melhorar a eficiência dos processos internos.",
     icon: KeyIcon,
   },
   {
-    service: "Data",
+    service: "Pipelines de Dados",
     description:
-      "Transformando dados em insights com Azure, Power BI e automações inteligentes.",
+      "Criação de fluxos automatizados de dados com Azure Data Factory, garantindo integração eficiente entre fontes diversas.",
     icon: DatabaseIcon,
+  },
+  {
+    service: "Criação de Protótipos",
+    description:
+      "Elaboração de protótipos funcionais no Figma, focando em usabilidade e experiência do usuário desde as primeiras etapas do projeto.",
+    icon: PenToolIcon, // ou outro ícone de design, como PenToolIcon
   },
 ];
 
@@ -149,6 +153,7 @@ export default function Home() {
               <span className={styles.pill}>Angular</span>
               <span className={styles.pill}>React</span>
               <span className={styles.pill}>Spring Boot</span>
+              <span className={styles.pill}>Firebase</span>
             </div>
             <div>
               <h1
@@ -158,12 +163,11 @@ export default function Home() {
                 data-scroll-direction="horizontal"
               >
                 <span className="text-6xl tracking-tighter text-foreground 2xl:text-8xl">
-                  Olá, eu sou
-                  <br />
+                  Olá, eu sou o {" "}
                 </span>
-                <span className="clash-grotesk text-gradient text-6xl 2xl:text-8xl">
-                  Gustavo.
-                </span>
+                  <span className="clash-grotesk text-gradient text-6xl 2xl:text-8xl">
+                    Gustavo.
+                  </span>
               </h1>
               <p
                 data-scroll
@@ -180,11 +184,11 @@ export default function Home() {
               data-scroll-speed="0.1"
               className="flex flex-row items-center space-x-1.5 pt-6"
             >
-              <Link href="/assets/curriculo.pdf" passHref>
-                <Button rel="noopener noreferrer">
-                  Baixar CV
+              <a href="https://www.linkedin.com/in/gustavo-mendes-rebelo/" target="_blank" rel="noopener noreferrer">
+                <Button rel="noopener noreferrer"> 
+                  LinkedIn
                 </Button>
-              </Link>
+              </a>
               <Button
                 variant="outline"
                 onClick={() => scrollTo(document.querySelector("#about"))}
@@ -228,8 +232,7 @@ export default function Home() {
             className="my-14 flex max-w-6xl flex-col justify-start space-y-10"
           >
             <h2 className="py-16  pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[40px]">
-              Desenvolvedor de Software com experiência em sistemas web e mobile, além da integração de APIs. Atuo com tecnologias como Angular, React, Flutter e Ionic, focado em entregar soluções eficientes, escaláveis e alinhadas às necessidades do negócio.
-            </h2>
+            Desenvolvedor de Software com foco em aplicações web e mobile, atuando no desenvolvimento de interfaces modernas e responsivas utilizando tecnologias como Angular, React, Flutter e Ionic. Experiência também na integração de APIs e na entrega de soluções escaláveis, performáticas e alinhadas aos objetivos do negócio.            </h2>
             <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
               {aboutStats.map((stat) => (
                 <div
