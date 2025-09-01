@@ -62,7 +62,7 @@ const skills = [
 
 const technologies = [
   { name: "TypeScript", icon: "/assets/technologies/Typescript.png" },
-  { name: "JavaScript", icon: "/assets/technologies/JavaScript.png" },
+  { name: "JavaScript", icon: "/assets/technologies/Javascript.png" },
   { name: "Ionic", icon: "/assets/technologies/Ionic.png" },
   { name: "React", icon: "/assets/technologies/React.png" },
   { name: "Flutter", icon: "/assets/technologies/Flutter.png" },
