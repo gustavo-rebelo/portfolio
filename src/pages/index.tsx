@@ -6,7 +6,9 @@ import {
   Code2,
   DatabaseIcon,
   KeyIcon,
-  PenToolIcon
+  PenToolIcon,
+  ChevronLeft, 
+  ChevronRight
 } from "lucide-react";
 import { MobileIcon, TriangleDownIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
@@ -56,6 +58,29 @@ const skills = [
       "Elaboração de protótipos funcionais no Figma, focando em usabilidade e experiência do usuário desde as primeiras etapas do projeto.",
     icon: PenToolIcon, // ou outro ícone de design, como PenToolIcon
   },
+];
+
+const technologies = [
+  { name: "TypeScript", icon: "/assets/technologies/Typescript.png" },
+  { name: "JavaScript", icon: "/assets/technologies/JavaScript.png" },
+  { name: "Ionic", icon: "/assets/technologies/Ionic.png" },
+  { name: "React", icon: "/assets/technologies/React.png" },
+  { name: "Flutter", icon: "/assets/technologies/Flutter.png" },
+  { name: "Angular", icon: "/assets/technologies/Angular.png" },
+  { name: "Python", icon: "/assets/technologies/Python.png" },
+  { name: "Java", icon: "/assets/technologies/Java.png" },
+  { name: "Node.js", icon: "/assets/technologies/Node.png" },
+  { name: "Spring Boot", icon: "/assets/technologies/Spring.png" },
+  { name: "Azure Data Factory", icon: "/assets/technologies/Adf.png" },
+  { name: "Azure", icon: "/assets/technologies/Azure.png" },
+  { name: "n8n", icon: "/assets/technologies/n8n.png" },
+  { name: "Firebase", icon: "/assets/technologies/Firebase.png" },
+  { name: "SQL Server", icon: "/assets/technologies/Sql.png" },
+  { name: "PostgreSQL", icon: "/assets/technologies/Postgressql.png" },
+  { name: "MongoDB", icon: "/assets/technologies/Mongodb.png" },
+  { name: "Docker", icon: "/assets/technologies/Docker.png" },
+  { name: "Git", icon: "/assets/technologies/git.png" },
+  { name: "Figma", icon: "/assets/technologies/Figma.png" },
 ];
 
 export default function Home() {
@@ -131,6 +156,16 @@ export default function Home() {
     });
   }, []);
 
+  const techScrollRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollTech = (direction: "left" | "right") => {
+    const el = techScrollRef.current;
+    if (!el) return;
+    // rola 70% da largura visível do container para um movimento consistente
+    const scrollAmount = Math.round(el.offsetWidth * 0.7);
+    el.scrollBy({ left: direction === "left" ? -scrollAmount : scrollAmount, behavior: "smooth" });
+  };
+
   return (
     <Container>
       <div ref={refScrollContainer}>
@@ -143,18 +178,6 @@ export default function Home() {
           className="mt-40 flex w-full flex-col items-center xl:mt-0 xl:min-h-screen xl:flex-row xl:justify-between"
         >
           <div className={styles.intro}>
-            <div
-              data-scroll
-              data-scroll-direction="horizontal"
-              data-scroll-speed=".1"
-              className="flex flex-row items-center space-x-1.5"
-            >
-              <span className={styles.pill}>TypeScript</span>
-              <span className={styles.pill}>Angular</span>
-              <span className={styles.pill}>React</span>
-              <span className={styles.pill}>Spring Boot</span>
-              <span className={styles.pill}>Firebase</span>
-            </div>
             <div>
               <h1
                 data-scroll
@@ -175,7 +198,7 @@ export default function Home() {
                 data-scroll-speed=".06"
                 className="mt-1 max-w-lg tracking-tight text-muted-foreground 2xl:text-xl"
               >
-                Desenvolvedor de Software com conhecimento no desenvolvimento de soluções web e mobile. Atualmente, trabalho com tecnologias como React.js, React Native, Flutter, Ionic e Angular para criar e dar sustentação a interfaces de usuário em plataformas web e mobile.
+                Engenheiro de Software com experiência em desenvolvimento full stack, engenharia de dados e integrações. Especialista em ETL, modelagem de dados, APIs RESTful e arquiteturas em nuvem escaláveis. Domínio em Azure Data Factory, n8n, SQL Server, Angular, Ionic e React, com atuação em todo o ciclo de vida de software, desde concepção até entrega em produção, garantindo eficiência, performance e segurança.
               </p>
             </div>
             <span
@@ -208,20 +231,75 @@ export default function Home() {
             </div>
           </div>
           <div
-  data-scroll
-  data-scroll-speed="0.1"
-  className="mt-14 h-full xl:mt-0 flex justify-center xl:mr-20 xl:w-1/2 xl:max-w-md xl:items-center xl:justify-end "
->
-  <Image
-    src="/assets/cover.jpeg"
-    alt="Gustavo Rebelo"
-    width={500}
-    height={800}
-    className="rounded-lg transition-transform duration-1000 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 hover:backdrop-blur-sm"
-  />
-</div>
-
+            data-scroll
+            data-scroll-speed="0.1"
+            className="mt-14 h-full xl:mt-0 flex justify-center xl:mr-20 xl:items-center xl:justify-end"
+          >
+            <div className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 relative rounded-full overflow-hidden transition-transform duration-1000 hover:scale-105 hover:shadow-lg hover:shadow-primary/20">
+              <Image
+                src="/assets/cover.jpeg"
+                alt="Gustavo Rebelo"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
         </section>
+
+        {/* Carrossel de tecnologias - fora do grid para ocupar a largura total */}
+        <div className="w-full my-26">
+          <h2 className="mb-8 mt-10 text-2xl font-light tracking-tighter text-foreground xl:text-[40px]">
+            Tecnologias Utilizadas:
+          </h2>
+
+          <div className="relative">
+            {/* botão esquerdo */}
+            <button
+              onClick={() => scrollTech("left")}
+              aria-label="Scroll left"
+              className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-white/20 rounded-full p-2 backdrop-blur-md hover:bg-white/30 transition"
+            >
+              <ChevronLeft className="w-5 h-5 text-foreground" />
+            </button>
+
+            {/* botão direito */}
+            <button
+              onClick={() => scrollTech("right")}
+              aria-label="Scroll right"
+              className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-white/20 rounded-full p-2 backdrop-blur-md hover:bg-white/30 transition"
+            >
+              <ChevronRight className="w-5 h-5 text-foreground" />
+            </button>
+
+            {/* container rolável */}
+            <div
+              ref={techScrollRef}
+              className="w-full overflow-x-hidden px-20"
+              tabIndex={0}
+            >
+              <div className="flex items-center space-x-8 w-max py-10">
+                {technologies.map((tech, idx) => (
+                  <div
+                    key={`${tech.name}-${idx}`}
+                    className="flex flex-col items-center justify-center min-w-[0px] cursor-grab hover:scale-105 transition-transform duration-300"
+                  >
+                    <div className="w-20 h-20 relative">
+                      <Image
+                        src={tech.icon}
+                        alt={tech.name}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <span className="mt-2 text-center text-sm text-muted-foreground xl:text-lg">
+                      {tech.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* About */}
         <section id="about" data-scroll-section>
@@ -232,7 +310,8 @@ export default function Home() {
             className="my-14 flex max-w-6xl flex-col justify-start space-y-10"
           >
             <h2 className="py-16  pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[40px]">
-            Desenvolvedor de Software com foco em aplicações web e mobile, atuando no desenvolvimento de interfaces modernas e responsivas utilizando tecnologias como Angular, React, Flutter e Ionic. Experiência também na integração de APIs e na entrega de soluções escaláveis, performáticas e alinhadas aos objetivos do negócio.            </h2>
+            Engenheiro de Software com experiência em desenvolvimento full stack, dados e integrações, especializado em ETL, serviços em nuvem e frameworks modernos como Angular e React.         
+            </h2>
             <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
               {aboutStats.map((stat) => (
                 <div
@@ -247,10 +326,9 @@ export default function Home() {
                   </span>
                 </div>
               ))}
-            </div>
+          </div>
           </div>
         </section>
-
 
         {/* Skills */}
         <section id="skills" data-scroll-section>
@@ -423,7 +501,6 @@ export default function Home() {
     </Container>
   );
 }
-
 function Gradient() {
   return (
     <>

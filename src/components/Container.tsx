@@ -83,8 +83,9 @@ export default function Container(props: ContainerProps) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: "Gustavo Rebelo | Desenvolvedor Full-Stack",
-    description: `Olá, eu sou o Gustavo Rebelo, um desenvolvedor full-stack apaixonado por criar soluções inovadoras e eficientes. Com experiência em diversas tecnologias, estou sempre em busca de novos desafios e oportunidades para aprimorar minhas habilidades.`,
+    title: "Gustavo Rebelo | Engenheiro de Software",
+    description: `  Olá, eu sou o Gustavo Rebelo — Engenheiro de software apaixonado por criar soluções inovadoras e eficientes. Com experiência em diversas tecnologias, estou sempre em busca de novos desafios e oportunidades para aprimorar minhas habilidades.
+`,
     image: "/assets/logo.png",
     type: "website",
     ...customMeta,
