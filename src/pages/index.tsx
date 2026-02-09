@@ -310,7 +310,7 @@ export default function Home() {
             className="my-14 flex max-w-6xl flex-col justify-start space-y-10"
           >
             <h2 className="py-16  pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[40px]">
-            Engenheiro de Software com experiência em desenvolvimento full stack, dados e integrações, especializado em ETL, serviços em nuvem e frameworks modernos como Angular e React.         
+            Engenheiro de Software com experiência em desenvolvimento full stack, engenharia de dados e integrações, especializado em ETL, serviços em nuvem e frameworks modernos.         
             </h2>
             <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
               {aboutStats.map((stat) => (
