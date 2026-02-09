@@ -22,9 +22,9 @@ import Image from 'next/image';
 
 
 const aboutStats = [
-  { label: "Anos de experiência", value: "1+" },
+  { label: "Anos de experiência", value: "2+" },
   { label: "Tecnologias utilizadas", value: "5+" },
-  { label: "Projetos desenvolvidos", value: "10+" },
+  { label: "Projetos desenvolvidos", value: "15+" },
 ];
 
 const skills = [
@@ -198,7 +198,7 @@ export default function Home() {
                 data-scroll-speed=".06"
                 className="mt-1 max-w-lg tracking-tight text-muted-foreground 2xl:text-xl"
               >
-                Engenheiro de Software com experiência em desenvolvimento full stack, engenharia de dados e integrações. Especialista em ETL, modelagem de dados, APIs RESTful e arquiteturas em nuvem escaláveis. Domínio em Azure Data Factory, n8n, SQL Server, Angular, Ionic e React, com atuação em todo o ciclo de vida de software, desde concepção até entrega em produção, garantindo eficiência, performance e segurança.
+                Sou Engenheiro de Software com experiência em desenvolvimento full stack, engenharia de dados e integrações entre sistemas. Atuo com ETL (Azure Data Factory, n8n), modelagem de dados, APIs RESTful, SQL Server e arquiteturas em nuvem escaláveis. Desenvolvo soluções com Angular, Ionic e React, participando de todo o ciclo de vida do software. Entrego sistemas eficientes, performáticos e seguros, sempre com comunicação clara e foco na necessidade do cliente.
               </p>
             </div>
             <span
